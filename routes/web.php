@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/posts', PostsController::class);
-Route::delete('/posts/images/{id}', [PostsController::class, 'deleteImage']);
+Route::delete('/posts/images/{id}', [PostsController::class, 'deleteImage'])->middleware(['auth']);
 
 
 Route::get('/dashboard', function () {
